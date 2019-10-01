@@ -1,0 +1,13 @@
+- name: Set VPC project path
+  terraform:
+    project_path: "{{ vpc_project_dir }}"
+    state: present
+
+- name: Create new VPC
+  terraform:
+    project_path: "{{ vpc_project_path }}"
+    state: "{{ state }}"
+    force_init: true
+    variables:
+      aws_region: "{{ vpc_region }}"
+      availability_zones: "{{ vpc_availability_zones|to_json }}"
