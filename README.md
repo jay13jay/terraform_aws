@@ -10,7 +10,7 @@
 ### To Run
 #### Default behavior is state=present
 - Create the VPC and associated subnets:
-	- ```ansible-playbook site.yml -e state=present```
+	- ```ansible-playbook site.yml```
 - Delete the VPC and subnets:
 	- ```ansible-playbook site.yml -e state=absent```
   
