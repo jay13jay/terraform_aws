@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+# Ansible vault password file
+secrets/vault.yml
