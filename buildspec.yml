@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    PATH: "$PATH;/usr/local/"
+    PATH: "$PATH:/usr/local/"
     # GOPATH: "$CODEBUILD_SRC_DIR/Projects/terraform_aws"
   #parameter-store:
      # key: "value"
