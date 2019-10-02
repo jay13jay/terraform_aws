@@ -32,6 +32,7 @@ phases:
       - go test
   build:
     commands:
+      - cd ../../aws_vpc/
       - terraform apply -auto-approve
       # - command
   #post_build:
