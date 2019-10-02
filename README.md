@@ -6,6 +6,8 @@
 ## VPC
 - currently creates a VPC in the AZ defined in group_vars/all
 - default AZ is us-east-1 with subnets created in all regions
+    - A public and Private /24 subnet will be created in each region
+    - provides 251 hosts maximum. a different subnet scheme will be needed for more nodes per region
   
 ### To Run
 - Make a backup of secrets/vault.yml

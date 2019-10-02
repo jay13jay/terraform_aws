@@ -11,3 +11,4 @@
     variables:
       aws_region: "{{ vpc_region }}"
       availability_zones: "{{ vpc_availability_zones|to_json }}"
+      tag_name: "{{ vpc_tag_name }}"
