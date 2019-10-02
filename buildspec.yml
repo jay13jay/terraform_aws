@@ -25,7 +25,7 @@ phases:
       - go get "github.com/gruntwork-io/terratest/modules/terraform"
       - go get "github.com/stretchr/testify/assert"
       - go get "github.com/stretchr/testify/require"
-      - cd "$HOME/Projects/terraform_aws/files/tests/vpc_tests"
+      - cd "files/tests/vpc_tests"
       - go test
   build:
     commands:
