@@ -1,0 +1,50 @@
+version: 0.2
+
+env:
+  variables:
+    GOROOT: "/usr/local/go"
+    GOPATH: "$HOME/Projects/terraform_aws"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+  #git-credential-helper: yes
+
+phases:
+  #install:
+    #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
+    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
+    #runtime-versions:
+      # name: version
+      # name: version
+    #commands:
+      # - command
+      # - command
+  pre_build:
+    commands:
+      - wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+      - tar -xzf go1.12.7.linux-amd64.tar.gz
+      - mv go /usr/local
+      - go get "github.com/gruntwork-io/terratest/modules/aws"
+      - go get "github.com/gruntwork-io/terratest/modules/terraform"
+      - go get "github.com/stretchr/testify/assert"
+      - go get "github.com/stretchr/testify/require"
+      - cd "$HOME/Projects/terraform_aws/files/tests/vpc_tests"
+      - go test
+  build:
+    commands:
+      # - command
+      # - command
+  #post_build:
+    #commands:
+      # - command
+      # - command
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
