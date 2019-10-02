@@ -1,8 +1,8 @@
 version: 0.2
 
-env:
-  variables:
-    PATH: "$PATH:/usr/local/"
+# env:
+#   variables:
+    # PATH: "$PATH:/usr/local/"
     # GOPATH: "$CODEBUILD_SRC_DIR/Projects/terraform_aws"
   #parameter-store:
      # key: "value"
@@ -21,6 +21,7 @@ phases:
       # - command
   pre_build:
     commands:
+      - echo $PATH
       - wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
       - unzip terraform_0.12.9_linux_amd64.zip
       - mv terraform /usr/local
