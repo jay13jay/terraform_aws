@@ -56,7 +56,7 @@ func TestTerraformAwsNetworkExample(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Run `terraform output` to get the value of an output variable
-	publicSubnetId := terraform.Output(t, terraformOptions, "public_subnet_id")
+	// publicSubnetId := terraform.Output(t, terraformOptions, "public_subnet_id")
 	privateSubnetId := terraform.Output(t, terraformOptions, "private_subnet_id")
 	vpcId := terraform.Output(t, terraformOptions, "main_vpc_id")
 
