@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    GOROOT: "/usr/local/go"
-    GOPATH: "$HOME/Projects/terraform_aws"
+    # GOROOT: "/usr/local/go"
+    # GOPATH: "$CODEBUILD_SRC_DIR/Projects/terraform_aws"
   #parameter-store:
      # key: "value"
      # key: "value"
