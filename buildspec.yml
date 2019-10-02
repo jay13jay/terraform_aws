@@ -1,8 +1,8 @@
 version: 0.2
 
-# env:
-  # variables:
-    # GOROOT: "/usr/local/go"
+env:
+  variables:
+    PATH: "$PATH;/usr/local/"
     # GOPATH: "$CODEBUILD_SRC_DIR/Projects/terraform_aws"
   #parameter-store:
      # key: "value"
@@ -24,7 +24,6 @@ phases:
       - wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
       - unzip terraform_0.12.9_linux_amd64.zip
       - mv terraform /usr/local
-      - export PATH=$PATH;/usr/local
       - go get "github.com/gruntwork-io/terratest/modules/aws"
       - go get "github.com/gruntwork-io/terratest/modules/terraform"
       - go get "github.com/stretchr/testify/assert"
