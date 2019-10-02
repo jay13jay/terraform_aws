@@ -2,6 +2,9 @@
   
 # Current state
 - VPC role is completed
+
+# Build State
+https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUUMxeGJMVkd6Nmx1TDBhTC91RlAramd2anZsc1YrYVlod3N4MEtUTDdYMHNCd3hON0RXSFl5RzMrT044S3NTM09YT3VLZmhPRkZ1eWNXWkdUNC9QZllvPSIsIml2UGFyYW1ldGVyU3BlYyI6IlFtbVloSzN3bmh3ZTN1T1AiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master
   
 ## VPC
 - currently creates a VPC in the AZ defined in group_vars/all
