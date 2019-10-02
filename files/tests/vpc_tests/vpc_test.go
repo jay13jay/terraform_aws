@@ -26,11 +26,14 @@ func TestTerraformAwsNetworkExample(t *testing.T) {
 
 	// Pick a random AWS region to test in. This helps ensure your code works in all regions.
 	awsRegion := aws.GetRandomStableRegion(t, nil, nil)
+	awsZones, _ := aws.GetAvailabilityZonesE(t, awsRegion)
+	awsZone := make([]string, 1)
+	awsZone[0] = awsZones[0]
 
 	// Give the VPC and the subnets correct CIDRs
-	vpcCidr := "10.10.0.0/16"
-	privateSubnetCidr := "10.10.1.0/24"
-	publicSubnetCidr := "10.10.2.0/24"
+	base_cidr_block := "10.1.0.0/16"
+	base_cidr_block_public := "10.1.1.0/20"
+	base_cidr_block_private := "10.1.100.0/20"
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
@@ -38,10 +41,11 @@ func TestTerraformAwsNetworkExample(t *testing.T) {
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
-			"main_vpc_cidr":       vpcCidr,
-			"private_subnet_cidr": privateSubnetCidr,
-			"public_subnet_cidr":  publicSubnetCidr,
-			"aws_region":          awsRegion,
+			"base_cidr_block":         base_cidr_block,
+			"base_cidr_block_public":  base_cidr_block_public,
+			"base_cidr_block_private": base_cidr_block_private,
+			"aws_region":              awsRegion,
+			"availability_zones":      awsZone,
 		},
 	}
 

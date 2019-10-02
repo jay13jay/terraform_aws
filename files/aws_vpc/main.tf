@@ -55,3 +55,15 @@ resource "aws_subnet" "az-private" {
   # such as 10.1.16.0/20 .
   cidr_block = cidrsubnet(var.base_cidr_block_private, 4, count.index+1)
 }
+
+output "main_vpc_id" {
+  value = aws_vpc.main.id
+}
+
+output "public_subnet_id" {
+  value = aws_subnet.az-public.*.id
+}
+
+output "private_subnet_id" {
+  value = aws_subnet.az-private.*.id
+}
